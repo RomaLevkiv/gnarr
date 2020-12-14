@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreatePostDto {
+  id: ID!
+  message: String!
+  length: Int!
+  author: String!
+}
+
+type Query {
+  getAllPosts: [CreatePostDto!]!
+}
+
+type Mutation {
+  createPost(author: String!, length: Float!, message: String!): CreatePostDto!
+}
