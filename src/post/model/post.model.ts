@@ -1,7 +1,7 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
 @ObjectType()
-export class CreatePostDto {
+export class PostModel {
   @Field(() => ID)
   id: string;
   @Field()

@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { uuid } from 'uuidv4';
-import { IPost } from './interfaces/post.interface';
-import { PostInput } from './input/post.input';
+import { PostInput } from './dto/post.input';
+import { PostModel } from './model/post.model';
 
 @Injectable()
 export class PostService {
-  private posts: IPost[] = [
+  private posts: PostModel[] = [
     {
       id: 'test',
       message: 'message test',
@@ -20,11 +20,11 @@ export class PostService {
     },
   ];
 
-  getAllPosts(): IPost[] {
+  getAllPosts(): PostModel[] {
     return this.posts;
   }
 
-  createPost(postInput: PostInput): IPost {
+  createPost(postInput: PostInput): PostModel {
     const { message, length, author } = postInput;
     const newPost = {
       id: uuid(),
